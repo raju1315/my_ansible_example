@@ -1,1 +1,11 @@
+[mywebservers]
 172.31.33.48
+172.31.40.247
+
+[myappservers]
+172.31.60.222
+172.31.83.380
+
+[mywebservers: vars]
+webpackonubuntu=apache2
+webpackonredhat=hhtpd
