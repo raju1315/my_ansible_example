@@ -1,0 +1,5 @@
+---
+   webpackonubuntu: apache2
+   webpackonredhat: hhtpd
+   webpackonubjava: openjdk-8-jre
+   webpackonredjava: java-1.8.0-openjdk
