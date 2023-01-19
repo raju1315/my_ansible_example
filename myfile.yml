@@ -1,0 +1,9 @@
+---
+- hosts: 172.31.33.48
+  become: yes
+  tasks:
+  - name: i want to create file
+    file: 
+       path: /home/ubuntu/myfile.txt
+       state: touch
+    #   when: myresult.stderr !=""   
