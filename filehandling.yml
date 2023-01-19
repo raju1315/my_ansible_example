@@ -7,19 +7,31 @@
     apt: 
        name: apache2
        state: present
+
+    notify: restart webserver after every task   
     #   when: myresult.stderr !=""   
   - name: copy file into ansible node side
     copy:
         src: staticfile.txt
         dest : /home/ubuntu/mystaticfile.txt
+    notify: restart webserver after every task
 
   - name: copy index.j2 file into ansible node
     template:
          src: myindex.j2 
          dest: /var/www/html/index.html      
+    notify: restart webserver after every task
 
   - name: download internet files
     get_url:
         url: https://get.jenkins.io/war-stable/2.375.2/jenkins.war
         dest: /home/ubuntu/jenkins.war
         force_basic_auth: yes  
+    notify: restart webserver after every task
+
+
+  handlers:
+  - name: restart webserver after every task
+    service:
+        name: apache2
+        state: restarted  
