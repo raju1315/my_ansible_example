@@ -1,0 +1,21 @@
+---
+- hosts: 172.31.33.48
+  become: yes
+  tasks:
+  - name: i want install git
+    apt: 
+       name: git
+       state: present
+    #when: myresult.stderr !=""   
+  - name: i want install tree
+    apt:
+       name: tree
+       statee: present
+    ignore_error: true   
+    #when: myresult.stderr ==""     
+  - name: i want install wget
+    apt: 
+        name: wget
+        state: present
+    #tags: mywget
+  
