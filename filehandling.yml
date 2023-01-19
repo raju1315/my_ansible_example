@@ -5,7 +5,10 @@
   - include_tasks: myfile.yml
   - name: install webserver
     apt: 
-       name: apche2
+       name: apache2
        state: present
     #   when: myresult.stderr !=""   
-  
+  - name: copy file into ansible node side
+    copy:
+        src: staticfile.txt
+        des: /home/ubuntu/mystaticfile.txt
