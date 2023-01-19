@@ -11,4 +11,4 @@
   - name: copy file into ansible node side
     copy:
         src: staticfile.txt
-        des: /home/ubuntu/mystaticfile.txt
+        dest : /home/ubuntu/mystaticfile.txt
