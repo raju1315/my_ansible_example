@@ -1,2 +1,9 @@
 ---
-# tasks file for mywebrole
+- hosts: 172.31.33.48
+  become: yes
+  tasks:
+  - name: i want install webserver
+    apt: 
+       name: apache2
+       state: present
+    #   when: myresult.stderr !=""  
